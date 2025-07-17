@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1>Local Library Home</h1>
+
+<p>
+    {% trans "Welcome to LocalLibrary, a website developed by" %} <em>Mozilla Developer Network</em>!
+</p>
+
+<h2>{% trans "Dynamic content" %}</h2>
+<p>{% trans "The library has the following record counts:" %}</p>
+<ul>
+    <li>{% blocktrans with count=num_books %}Books: {{ count }}{% endblocktrans %}</li>
+    <li>{% blocktrans with count=num_instances %}Copies: {{ count }}{% endblocktrans %}</li>
+    <li>{% blocktrans with count=num_instances_available %}Copies available: {{ count }}{% endblocktrans %}</li>
+    <li>{% blocktrans with count=num_authors %}Authors: {{ count }}{% endblocktrans %}</li>
+</ul>
+{% endblock %}
