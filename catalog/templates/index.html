@@ -16,4 +16,11 @@
     <li>{% blocktrans with count=num_instances_available %}Copies available: {{ count }}{% endblocktrans %}</li>
     <li>{% blocktrans with count=num_authors %}Authors: {{ count }}{% endblocktrans %}</li>
 </ul>
+<p>
+  {% blocktrans count num_visits as counter %}
+    You have visited this page {{ counter }} time.
+  {% plural %}
+    You have visited this page {{ counter }} times.
+  {% endblocktrans %}
+</p>
 {% endblock %}
