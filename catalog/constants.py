@@ -35,3 +35,5 @@ LOAN_STATUS_RESERVED = "r"
 # UUID default function
 # --------------------
 UUID_DEFAULT = uuid.uuid4
+
+PAGINATION_BY = 2
