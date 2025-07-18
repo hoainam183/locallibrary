@@ -1,5 +1,4 @@
 # catalog/constants.py
-
 import uuid
 
 # --------------------
@@ -26,6 +25,11 @@ LOAN_STATUS = {
     ],
     "DEFAULT": "m",
 }
+
+LOAN_STATUS_MAINTENANCE = "m"
+LOAN_STATUS_ON_LOAN = "o"
+LOAN_STATUS_AVAILABLE = "a"
+LOAN_STATUS_RESERVED = "r"
 
 # --------------------
 # UUID default function

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static i18n %}
+    <head>
+        {% block title %}
+        <title>Local Library</title>
+        {% endblock %}
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+        />
+
+        <!-- Additional CSS -->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    {% block sidebar %}
+                    <ul class="sidebar-nav">
+                        <li><a href="{% url 'index' %}">{% trans "Home" %}</a></li>
+                        <li><a href="#">{% trans "All books" %}</a></li>
+                        <li><a href="#">{% trans "All authors" %}</a></li>
+                    </ul>
+                    {% endblock %}
+                </div>
+                <div class="col-sm-10">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    </body>
+</html>
