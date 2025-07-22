@@ -2,9 +2,11 @@ from django.shortcuts import render
 from catalog.models import Book, Author, BookInstance, Genre
 from django.views import generic
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import permission_required
 from catalog.constants import (
     LOAN_STATUS_AVAILABLE,
     LOAN_STATUS_MAINTENANCE,
+    LOAN_STATUS_ON_LOAN,
     PAGINATION_BY,
 )
 
@@ -57,3 +59,16 @@ def book_detail_view(request, pk):
             "STATUS_MAINTENANCE": LOAN_STATUS_MAINTENANCE,
         },
     )
+
+
+class LoanedBooksByUserListView(generic.ListView):
+
+    model = BookInstance
+    template_name = "catalog/bookinstance_list_borrowed_user.html"
+    paginate_by = PAGINATION_BY
+
+    def get_queryset(self):
+        """Return the books on loan to the current user."""
+        return BookInstance.objects.filter(
+            borrower=self.request.user, status__exact=LOAN_STATUS_ON_LOAN
+        ).order_by("due_back")

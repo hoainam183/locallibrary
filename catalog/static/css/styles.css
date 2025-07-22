@@ -8,3 +8,16 @@
   margin-left: 20px;
   margin-top: 20px;
 }
+
+.logout-form {
+    display: inline;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}
