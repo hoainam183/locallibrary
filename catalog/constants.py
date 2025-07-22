@@ -36,6 +36,6 @@ LOAN_STATUS_RESERVED = "r"
 # --------------------
 UUID_DEFAULT = uuid.uuid4
 
-PAGINATION_BY = 2
+PAGINATION_BY = 10
 
 WEEK_DEFAULT = 3

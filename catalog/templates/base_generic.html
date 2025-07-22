@@ -32,7 +32,7 @@
                                 >{% trans "All books" %}</a
                             >
                         </li>
-                        <li><a href="#">{% trans "All authors" %}</a></li>
+                        <li><a href="{% url 'authors' %}">{% trans "All authors" %}</a></li>
                         {% if user.is_authenticated %}
                         <li>{% trans "User" %}: {{ user.get_username }}</li>
                         <li>
